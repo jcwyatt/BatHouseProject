@@ -52,12 +52,6 @@ while True:
 #Pushing data to Thingspeak
 # python
 
-        if humidity is not None and temperature is not None:
-                print 'Temp={0:0.1f}*  Humidity={1:0.1f}%'.format(temperature, humidity)
-        else:
-                print 'Failed to get reading. Try again!'
-                sys.exit(1)
-
 
 	params = urllib.urlencode({'field1': temperature, 'field2': humidity,'key':'92P5L3PGPTT8ZE8N'})
 	headers = {"Content-type": "application/x-www-form-urlencoded","Accept":"text/plain"}
@@ -73,6 +67,5 @@ while True:
 		print 'Temp={0:0.1f}*  Humidity={1:0.1f}%'.format(temperature, humidity)
 	else:
 		print 'Failed to get reading. Try again!'
-		sys.exit(1)
 	
-	sleep(60)
+	sleep(180)
